@@ -9,6 +9,7 @@ int total;
 int thickness;
 float time=0;
 float increment=1;
+
 void setup()
 { 
   size(1000,1000);
@@ -33,7 +34,7 @@ void setup()
   {
     float x= (i+1.5)*(width-thickness)/(total+1);
     float y= (i+1.5)*(height-thickness)/(total+1);    
-    oscis[i]=new oscilator(new PVector(x,y),amplitude,timeP*(i+start+increment));
+    oscis[i]=new oscilator(new PVector(x,y),amplitude,timeP*(i+start+increment),0,0);
   }
   background(bgc);
   
