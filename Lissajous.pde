@@ -1,6 +1,6 @@
 oscilator oscis[];
-int n=55;
-int start=-56;
+int n=6;
+int start=0;
 PGraphics lissi;
 int bgc=25;
 float timeP=60;
