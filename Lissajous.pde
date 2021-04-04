@@ -1,6 +1,6 @@
 oscilator oscis[];
-int n=6;
-int start=0;
+int n=55;
+int start=-56;
 PGraphics lissi;
 int bgc=25;
 float timeP=60;
@@ -12,7 +12,7 @@ float increment=1;
 
 void setup()
 { 
-  size(1000,1000);
+  size(5000,5000);
   
   //swaps and makes larger no to be n
   if(n<start)
@@ -62,7 +62,7 @@ void draw()
     }
   }
   //checks if the slowest completes(-ve value should not exceed +value)
-  if(time>(timeP*((start<0?0:start)+n)*((start<0?0:start)+n-increment)))
+  if(time>(timeP*max(abs(start-1),n)*((max(abs(start-1),n))==1?1:(n-increment))))
   {
     time=0;
     //saves the final result
@@ -121,7 +121,7 @@ void draw()
 //function to get color from index of lissajous
 int colorMap(int c,int total_)
 {
-  return color(map(c,0,(total_-1)*2,20,360),30,100);
+  return color(map(c,0,(total==1?1:total_-1)*2,20,360),30,100);
 }
 
 //takes screenshot on clicking on screen
